@@ -54,7 +54,7 @@ Pimcore\Model\Version\Adapter\VersionStorageAdapterInterface:
 
 Pimcore\Model\Version\Adapter\DatabaseVersionStorageAdapter:
     arguments:
-        $database_connection: '@doctrine.dbal.versioning_connection'
+        $databaseConnection: '@doctrine.dbal.default_connection'
 ```
 
 The database needs to contain a table called `versionsData`. The following script can be used to create the table including the necessary columns.
@@ -91,7 +91,7 @@ Pimcore\Model\Version\Adapter\FileSystemVersionStorageAdapter: ~
 
 Pimcore\Model\Version\Adapter\DatabaseVersionStorageAdapter:
     arguments:
-        $databaseConnection: '@doctrine.dbal.versioning_connection'
+        $databaseConnection: '@doctrine.dbal.default_connection'
 ```
 
 In this example the version data is stored in the database as long as neither the metadata nor the binary data exceeds 1000000 bytes in size.
